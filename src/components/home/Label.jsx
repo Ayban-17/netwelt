@@ -1,9 +1,13 @@
-import React from 'react'
+import PropTypes from "prop-types"
 
-const Label = () => {
+const Label = ({label}) => {
   return (
-    <div>Label</div>
+    <div className="text-center py-4">{label}</div>
   )
 }
+Label.propTypes ={
+  label:PropTypes.string.isRequired,
+}
+
 
 export default Label

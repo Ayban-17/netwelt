@@ -1,9 +1,13 @@
-import React from 'react'
+import PropTypes from "prop-types"
 
-const Title = () => {
+const Title = ({title}) => {
   return (
-    <div>Title</div>
+    <h1 className="text-5xl font-bold text-center">{title}</h1>
   )
+}
+
+Title.propTypes ={
+  title:PropTypes.string.isRequired,
 }
 
 export default Title

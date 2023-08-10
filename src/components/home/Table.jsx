@@ -45,22 +45,22 @@ const Table = () => {
 
   // Recursive function to render territories
   const renderTerritory = (territory, indent = 0) => (
-    <details key={territory.id} className={` w-56 mx-0 my-auto ${indent > 0 ? 'ml-4' : ''}`}>
+    <details key={territory.id} className={` border-2 p-4 w-56 mx-0 my-auto ${indent > 0 ? 'ml-4' : ''}`}>
       <summary>
         {territory.name}
       </summary>
       
       {territory.children.length > 0 && (
-        <p className="">
+        <div className="">
           {territory.children.map(child => renderTerritory(child, indent + 1))}
-        </p>
+        </div>
       )}
       
     </details>
   );
 
   return (
-    <div className="flex flex-col items-center gap-4 border-2">
+    <div className="flex flex-col items-center gap-4 ">
       
         {places.map(place => renderTerritory(place))}
     

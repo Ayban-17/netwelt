@@ -29,7 +29,6 @@ const Login = () => {
     try {
       const response = await axios.post(url, input);
       const data = await response.data;
-      console.log(data);
       setUserInfo(data);
       setLocalStorage(data.username)
       navigateTo("/");
@@ -47,7 +46,7 @@ const Login = () => {
         <h1 className="text-3xl font-bold">Login</h1>
         <Input name="username" type="text" onChange={handleOnchange} />
         <Input name="password" type="password" onChange={handleOnchange} />
-        <Button name="Login" />
+        <Button name="Login" onCLick={handleSubmit}/>
       </form>
     </div>
   );
